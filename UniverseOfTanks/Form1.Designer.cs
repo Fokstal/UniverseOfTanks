@@ -28,19 +28,34 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			components = new System.ComponentModel.Container();
+			timer1 = new System.Windows.Forms.Timer(components);
+			timer2 = new System.Windows.Forms.Timer(components);
 			SuspendLayout();
+			// 
+			// timer1
+			// 
+			timer1.Tick += timer1_Tick;
+			// 
+			// timer2
+			// 
+			timer2.Tick += timer2_Tick;
 			// 
 			// Form1
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(382, 353);
+			ClientSize = new Size(782, 753);
 			Name = "Form1";
 			Text = "Form1";
 			Paint += Form1_Paint;
+			KeyPress += Form1_KeyPress;
 			ResumeLayout(false);
 		}
 
 		#endregion
+
+		private System.Windows.Forms.Timer timer1;
+		private System.Windows.Forms.Timer timer2;
 	}
 }
