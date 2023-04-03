@@ -28,34 +28,85 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			components = new System.ComponentModel.Container();
-			timer1 = new System.Windows.Forms.Timer(components);
-			timer2 = new System.Windows.Forms.Timer(components);
+			scoreBox = new Label();
+			menuStrip1 = new MenuStrip();
+			gameToolStripMenuItem = new ToolStripMenuItem();
+			pauseToolStripMenuItem = new ToolStripMenuItem();
+			scoreLabel = new Label();
+			menuStrip1.SuspendLayout();
 			SuspendLayout();
 			// 
-			// timer1
+			// scoreBox
 			// 
-			timer1.Tick += timer1_Tick;
+			scoreBox.AutoSize = true;
+			scoreBox.Font = new Font("Segoe UI Black", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+			scoreBox.Location = new Point(67, 28);
+			scoreBox.Name = "scoreBox";
+			scoreBox.Size = new Size(34, 38);
+			scoreBox.TabIndex = 0;
+			scoreBox.Text = "0";
 			// 
-			// timer2
+			// menuStrip1
 			// 
-			timer2.Tick += timer2_Tick;
+			menuStrip1.ImageScalingSize = new Size(20, 20);
+			menuStrip1.Items.AddRange(new ToolStripItem[] { gameToolStripMenuItem });
+			menuStrip1.Location = new Point(0, 0);
+			menuStrip1.Name = "menuStrip1";
+			menuStrip1.Size = new Size(782, 28);
+			menuStrip1.TabIndex = 1;
+			menuStrip1.Text = "menuStrip1";
+			// 
+			// gameToolStripMenuItem
+			// 
+			gameToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pauseToolStripMenuItem });
+			gameToolStripMenuItem.Name = "gameToolStripMenuItem";
+			gameToolStripMenuItem.Size = new Size(62, 24);
+			gameToolStripMenuItem.Text = "Game";
+			gameToolStripMenuItem.Click += gameToolStripMenuItem_Click;
+			// 
+			// pauseToolStripMenuItem
+			// 
+			pauseToolStripMenuItem.Name = "pauseToolStripMenuItem";
+			pauseToolStripMenuItem.Size = new Size(129, 26);
+			pauseToolStripMenuItem.Text = "Pause";
+			pauseToolStripMenuItem.Click += pauseToolStripMenuItem_Click_1;
+			// 
+			// scoreLabel
+			// 
+			scoreLabel.AutoSize = true;
+			scoreLabel.Location = new Point(12, 42);
+			scoreLabel.Name = "scoreLabel";
+			scoreLabel.Size = new Size(49, 20);
+			scoreLabel.TabIndex = 2;
+			scoreLabel.Text = "Score:";
 			// 
 			// Form1
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(782, 753);
+			Controls.Add(scoreLabel);
+			Controls.Add(scoreBox);
+			Controls.Add(menuStrip1);
+			MainMenuStrip = menuStrip1;
 			Name = "Form1";
-			Text = "Form1";
-			Paint += Form1_Paint;
+			StartPosition = FormStartPosition.CenterScreen;
+			Text = "Universe of Tanks";
+			WindowState = FormWindowState.Maximized;
+			Paint += Painter;
 			KeyPress += Form1_KeyPress;
+			menuStrip1.ResumeLayout(false);
+			menuStrip1.PerformLayout();
 			ResumeLayout(false);
+			PerformLayout();
 		}
 
 		#endregion
 
-		private System.Windows.Forms.Timer timer1;
-		private System.Windows.Forms.Timer timer2;
+		private Label scoreBox;
+		private MenuStrip menuStrip1;
+		private ToolStripMenuItem gameToolStripMenuItem;
+		private ToolStripMenuItem pauseToolStripMenuItem;
+		private Label scoreLabel;
 	}
 }
